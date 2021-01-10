@@ -20,4 +20,14 @@ use Illuminate\Support\Facades\Route;
 
 // Route::resource('user', 'UserController'); // FIXME: ASSIM CRIA TODO O PADRAO REST
 
-Route::get('user', 'Api\\UserController@index');
+Route::post('auth/login', 'Api\\AuthController@login');
+
+
+Route::group(['middleware' => 'apiJwt',], function ($router) {
+
+  Route::get('user', 'Api\\UserController@index');
+  Route::post('auth/logout', 'Api\\AuthController@logout');
+  Route::post('auth/refresh', 'Api\\AuthController@refresh');
+
+  // Route::post('me', 'AuthController@me');
+});
