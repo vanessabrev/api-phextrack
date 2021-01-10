@@ -31,3 +31,11 @@ Route::group(['middleware' => 'apiJwt',], function ($router) {
 
   // Route::post('me', 'AuthController@me');
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| Referente ao SITE
+|--------------------------------------------------------------------------
+*/
+ Route::get('menu', 'Api\\Site\\MenuController@index');

@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder
         'name' => 'Josiel Faria',
         'email' => 'developerjosiel@gmail.com',
         'email_verified_at' => $now,
-        'password' => '1234',
+        'password' => '$2y$10$sdyi9WPf1UNbFrGoGcpW.uL.ua5sDrWOF2YQLpqbip1i5iKUsghky',
         'remember_token' =>  Str::random(10),
         'created_at' => $now,
         'updated_at' => $now,
