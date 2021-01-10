@@ -38,4 +38,5 @@ Route::group(['middleware' => 'apiJwt',], function ($router) {
 | Referente ao SITE
 |--------------------------------------------------------------------------
 */
- Route::get('menu', 'Api\\Site\\MenuController@index');
+Route::get('menus', 'Api\\Site\\MenuController@index');
+Route::get('products', 'Api\\Site\\ProductController@index');
