@@ -40,3 +40,4 @@ Route::group(['middleware' => 'apiJwt',], function ($router) {
 */
 Route::get('menus', 'Api\\Site\\MenuController@index');
 Route::get('products', 'Api\\Site\\ProductController@index');
+Route::get('social-medias', 'Api\\Site\\SocialMediaController@index');
