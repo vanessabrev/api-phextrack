@@ -15,7 +15,7 @@ return [
     /**
      * Indicates whether to enable pretty routes only when debug is enabled (APP_DEBUG).
      */
-    'debug_only' => true,
+    'debug_only' => false,
 
     /**
      * The methods to hide.
