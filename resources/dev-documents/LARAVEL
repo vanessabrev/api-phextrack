@@ -1,0 +1,25 @@
+https://github.com/Dhayllin/api-doc-pastry
+
+https://www.youtube.com/watch?v=Ri-DLFeepbM&t=1347s
+https://www.youtube.com/playlist?list=PLi_gvjv-JgXqop7hgVKZMGPiT9rUYy1sr
+
+
+chmod -R 777 storage/    (permissao do linux para escrita e leitura)
+chmod -R 777 bootstraop/
+
+php artisan route:list | grep -i "teste" ===== para pegar um item na lista
+
+php artisan storage:link
+
+php artisan make:model Teste -mrcs
+
+php artisan make:seed TestesTableSeeder
+
+php artisan migrate:fresh --seed (popular banco)
+
+obs: colocar nome de model em singular. As tables serão criadas em inglês no plural automagicamente.
+
+
+
+Comandos tirados do video Aut JWT
+php artisan make:controller API\\UserController --api

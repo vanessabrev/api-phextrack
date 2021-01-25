@@ -1,0 +1,11 @@
+STOP se for necessário: 
+/etc/init.d/apache2 stop
+
+Start APACHE/MYSQL: 
+sudo /opt/lampp/lampp start
+
+sudo /opt/lampp/lampp startmysql
+
+
+COMANDOS apache
+https://www.cyberciti.biz/faq/star-stop-restart-apache2-webserver/
