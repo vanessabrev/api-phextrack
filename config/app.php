@@ -176,6 +176,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+         /*
+         * Listar Rotas na url /routes...
+         */
+        PrettyRoutes\ServiceProvider::class,
     ],
 
     /*
