@@ -18,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-// Route::resource('user', 'UserController'); // FIXME: ASSIM CRIA TODO O PADRAO REST
+
+// FIXME: ASSIM CRIA TODO O PADRAO REST
+// Route::resource('user', 'UserController');
+// Route::resource('usuarios', 'Api\\UserController@index')->names('user)->parameters['usuarios' => 'user']; // 13:34  https://www.youtube.com/watch?v=_fDd_RKKWzk
 
 Route::post('auth/login', 'Api\\AuthController@login');
 
