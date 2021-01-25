@@ -1,0 +1,12 @@
+https://github.com/garygreen/pretty-routes?utm_source=learninglaravel.net
+
+Esse recurso é para mostrar as rotas do php artisan route:list
+
+Execute esse comando:
+composer require garygreen/pretty-routes
+
+Add isso nos providers do arquivo config/app.php:
+PrettyRoutes\ServiceProvider::class,
+
+Execute esse comando:
+php artisan vendor:publish --provider="PrettyRoutes\ServiceProvider"
