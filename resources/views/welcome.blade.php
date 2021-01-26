@@ -68,13 +68,11 @@
       </tbody>
     </table>
 
-
-
-    <footer class="mastfoot mt-auto">
+    <!-- <footer class="mastfoot mt-auto">
       <div class="inner">
         <p>Developed by <a href="https://josielfaria.com/">Devjo Tecnologia</a>, 2021.
       </div>
-    </footer>
+    </footer> -->
   </div>
 
 
