@@ -50,6 +50,7 @@
           <th>Method</th>
           <th>Middleware</th>
           <th>Function for API</th>
+          <th>Response</th>
         </tr>
       </thead>
       <tbody>
@@ -58,8 +59,9 @@
             echo '<tr>' .
               '<th>' . '/' . str_replace('"', '', json_encode($route->uri)) . '</th>' .
               '<th>' .  str_replace('"', '',  str_replace('[', '',  str_replace(']', '', json_encode($route->methods)))) . '</th>' .
-              '<th>' . str_replace('"', '', str_replace('[', '',  str_replace(']', '',json_encode($route->action['middleware'])))) . '</th>' .
-               '<th>' . str_replace('"', '',json_encode($route->getActionMethod())) . '</th>' .
+              '<th>' . str_replace('"', '', str_replace('[', '',  str_replace(']', '', json_encode($route->action['middleware'])))) . '</th>' .
+              '<th>' . str_replace('"', '', json_encode($route->getActionMethod())) . '</th>' .
+              '<th>  <a href="' . str_replace('"', '', json_encode($route->uri)) . '" class="btn btn-gradient" target="_blank"> Ver </a> </th>' .
               '</tr>';
           } ?>
         </tr>
@@ -108,7 +110,21 @@
   .table>thead>tr>td,
   .table>thead>tr>th {
     padding: 20px;
+  }
 
+  .btn-gradient {
+    background: #81848c;
+    color: white;
+    border-radius: 12px;
+    padding: 12px 30px;
+    transition: all 0.5s ease;
+    border: 0;
+    letter-spacing: 1px;
+  }
+
+  .btn-gradient:hover {
+    box-shadow: 0 0px 0px 0 rgba(0, 40, 120, 0);
+    transform: scale(0.930);
   }
 </style>
 
