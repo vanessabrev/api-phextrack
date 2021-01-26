@@ -43,7 +43,7 @@
     }
 
     ?>
-    <table id="routes-table" class="table table-bordered table-responsive">
+    <table id="routes-table" class="table table-responsive">
       <thead>
         <tr>
           <th>Url</th>
@@ -101,20 +101,11 @@
     text-align: center;
   }
 
-  .table>tbody>tr>td,
-  .table>tbody>tr>th,
-  .table>tfoot>tr>td,
-  .table>tfoot>tr>th,
-  .table>thead>tr>td,
-  .table>thead>tr>th {
-    padding: 20px;
-  }
-
   .btn-gradient {
     background: #81848c;
     color: white;
     border-radius: 12px;
-    padding: 12px 30px;
+    padding: 5px 20px;
     transition: all 0.5s ease;
     border: 0;
     letter-spacing: 1px;
