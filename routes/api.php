@@ -46,3 +46,6 @@ Route::get('products', 'Api\\Site\\ProductController@index');
 Route::get('social-medias', 'Api\\Site\\SocialMediaController@index');
 Route::get('contacts', 'Api\\Site\\ContactController@index');
 Route::get('info-homes', 'Api\\Site\\InfoHomeController@index');
+Route::get('about-us', 'Api\\Site\\AboutController@index');
+Route::get('about-gallery', 'Api\\Site\\AboutGalleryController@index');
+Route::get('about-itens', 'Api\\Site\\AboutItemController@index');
