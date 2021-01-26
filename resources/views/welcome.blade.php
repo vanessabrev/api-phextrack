@@ -26,80 +26,47 @@
     </header>
 
     <?php
+
+    use Illuminate\Support\Facades\Artisan;
+    use Illuminate\Support\Facades\Route;
+
     class NewEndpoint
     {
       public $method, $url,  $action, $middleware;
     }
 
-    $endpoint_1 = new NewEndpoint();
-    $endpoint_1->method = 'GET | HEAD';
-    $endpoint_1->url = '/';
-    $endpoint_1->action = 'Closure';
-    $endpoint_1->middleware = 'web';
-
-    $endpoint_2 = new NewEndpoint();
-    $endpoint_2->method = 'POST';
-    $endpoint_2->url = 'auth/login';
-    $endpoint_2->action = 'App\Http\Controllers\Api\AuthController@login';
-    $endpoint_2->middleware = 'api';
-
-    $endpoint_3 = new NewEndpoint();
-    $endpoint_3->method = 'POST';
-    $endpoint_3->url = 'auth/logout';
-    $endpoint_3->action = 'App\Http\Controllers\Api\AuthController@logout';
-    $endpoint_3->middleware = 'api apiJwt';
-
-    $endpoint_3 = new NewEndpoint();
-    $endpoint_3->method = 'POST';
-    $endpoint_3->url = 'auth/refresh';
-    $endpoint_3->action = 'App\Http\Controllers\Api\AuthController@refresh';
-    $endpoint_3->middleware = 'api apiJwt';
-
-    $endpoint_4 = new NewEndpoint();
-    $endpoint_4->method = 'GET | HEAD';
-    $endpoint_4->url = 'menus';
-    $endpoint_4->action = 'App\Http\Controllers\Api\MenuController@index';
-    $endpoint_4->middleware = 'api';
-
-    $endpoint_5 = new NewEndpoint();
-    $endpoint_5->method = 'GET | HEAD';
-    $endpoint_5->url = 'products';
-    $endpoint_5->action = 'App\Http\Controllers\Api\ProductController@index';
-    $endpoint_5->middleware = 'api';
-
-    $endpoint_6 = new NewEndpoint();
-    $endpoint_6->method = 'GET | HEAD';
-    $endpoint_6->url = 'user';
-    $endpoint_6->action = 'App\Http\Controllers\Api\UserController@index';
-    $endpoint_6->middleware = 'api apiJwt';
-
-    $endpoinst = array($endpoint_1, $endpoint_2, $endpoint_3, $endpoint_4,  $endpoint_5,  $endpoint_6);
-
+    $routes = array();
+    foreach (Route::getRoutes() as $route) {
+      if (str_contains(json_encode($route->action['middleware']), 'api') !== false) {
+        $routes[] = $route;
+      }
+    }
 
     ?>
-
-    <main role="main">
-      <table class="table table-dark">
-        <thead>
-          <tr>
-            <th scope="col">Method</th>
-            <th scope="col">URL</th>
-            <th scope="col">Action</th>
-            <th scope="col">Middleware</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($endpoinst as $item) {
+    <table id="routes-table" class="table table-bordered table-responsive">
+      <thead>
+        <tr>
+          <th>Url</th>
+          <th>Method</th>
+          <th>Middleware</th>
+          <th>Function for API</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <?php foreach ($routes as $route) {
             echo '<tr>' .
-              '<th>' . htmlentities($item->method) . '</th>' .
-              '<th>' . htmlentities($item->url) . '</th>' .
-              '<th>' . htmlentities($item->action) . '</th>' .
-              '<th>' . htmlentities($item->middleware) . '</th>' .
+              '<th>' . '/' . str_replace('"', '', json_encode($route->uri)) . '</th>' .
+              '<th>' .  str_replace('"', '',  str_replace('[', '',  str_replace(']', '', json_encode($route->methods)))) . '</th>' .
+              '<th>' . str_replace('"', '', str_replace('[', '',  str_replace(']', '',json_encode($route->action['middleware'])))) . '</th>' .
+               '<th>' . str_replace('"', '',json_encode($route->getActionMethod())) . '</th>' .
               '</tr>';
           } ?>
-        </tbody>
-      </table>
-    </main>
+        </tr>
+      </tbody>
+    </table>
+
+
 
     <footer class="mastfoot mt-auto">
       <div class="inner">
@@ -107,8 +74,6 @@
       </div>
     </footer>
   </div>
-
-
 
 
 </body>
@@ -121,7 +86,6 @@
   }
 
   .container {
-    width: 45vw;
     height: 100vh;
     display: grid;
   }
