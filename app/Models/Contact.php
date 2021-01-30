@@ -16,9 +16,9 @@ class Contact extends Model
   static function rules()
   {
     return [
-      'adresses' => 'required|array|min:3',
-      'phones' => 'required|array|min:3',
-      'emails' => 'required|array|min:3',
+      'adresses' => 'required|array|min:1',
+      'phones' => 'required|array|min:1',
+      'emails' => 'required|array|min:1',
     ];
   }
 
