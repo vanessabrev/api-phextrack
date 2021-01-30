@@ -1,0 +1,82 @@
+**TABELAS CRIADAD**
+
+      users
+      abouts
+      about_galleries
+      about_items
+      contacts
+      info_homes
+      menus
+      products
+      product_items
+      social_media
+
+
+################################################################
+
+
+**CRIAR TABELA**
+
+      phones
+      andresses
+      theme-colors
+      info-main
+
+      #failed_jobs
+      #migrations
+      #password_resets
+
+
+################################################################
+
+
+**ENDPOINTS vs TABELAS**
+
+      #Hoje 30/01
+      /user
+      /menus
+      /products
+        ->products
+        ->product_items
+      /social-medias
+      /contacts
+      /info-homes
+      /about-us
+      /about-gallery
+      /about-itens
+
+
+################################################################
+
+
+**REFATORAÇÃO**
+
+      /info-home <|ok|>
+
+      /social-medias <|ok|>
+
+      /products  <|ok|>
+        ->products
+        ->product_items
+
+      /contacts
+        ->contacts
+        ->phones
+        ->andresses
+
+      /about-us
+        ->abouts
+        ->about_galleries
+        ->about_items
+
+      /info-main
+        ->menus
+        ->info-main
+        ->theme-colors
+
+      #(REMOVER ENDPOINTS E CONTROLLER's)
+        /menus
+        /about-gallery
+        /about-itens
+
+        obs: remover controller e routes/api.php
