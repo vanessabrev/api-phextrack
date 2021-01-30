@@ -24,12 +24,18 @@ class DatabaseSeeder extends Seeder
     */
     $this->call(MenusTableSeeder::class);
     $this->call(InfoHomeSeeder::class);
-    $this->call(ProductsTableSeeder::class);
     $this->call(SocialMediasSeeder::class);
-    $this->call(ContactSeeder::class);
     $this->call(AboutSeeder::class);
     $this->call(AboutGallerySeeder::class);
     $this->call(AboutItemSeeder::class);
+
+    //products
+    $this->call(ProductsTableSeeder::class);
     $this->call(ProductItemSeeder::class);
+
+    //contacts
+    $this->call(PhoneSeeder::class);
+    $this->call(EmailSeeder::class);
+    $this->call(AddressSeeder::class);
   }
 }

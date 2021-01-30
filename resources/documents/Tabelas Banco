@@ -18,7 +18,7 @@
 **CRIAR TABELA**
 
       phones
-      andresses
+      adresses
       theme-colors
       info-main
 
@@ -62,7 +62,7 @@
       /contacts
         ->contacts
         ->phones
-        ->andresses
+        ->adresses
 
       /about-us
         ->abouts

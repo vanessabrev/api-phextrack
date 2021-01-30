@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class AndressSeeder extends Seeder
+class AddressSeeder extends Seeder
 {
   /**
    * Run the database seeds.
@@ -16,9 +16,8 @@ class AndressSeeder extends Seeder
   {
     // street, number, complement, postalCode, city, municipality, uf
     $now = date('Y-m-d H:i:s');
-    DB::table('contacts')->insert([
+    DB::table('adresses')->insert([
       [
-
         'street' => 'rua cabral guimaraes',
         'number' => '52',
         'complement' => 'apt 204',

@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Api\Site;
 
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
+use App\Models\Email;
+use App\Models\Phone;
+use App\Models\Address;
 
 class ContactController extends Controller
 {
@@ -14,8 +17,22 @@ class ContactController extends Controller
    */
   public function index()
   {
-    $itens = Contact::all();
+    $listContacts = new Contact;
+    $phones = Phone::all();
+    $emails = Email::all();
+    $adresses = Address::all();
 
-    return response()->json($itens);
+    $responseProducts = $this->mergeObjectItens($listContacts, $phones, $emails,  $adresses);
+
+    return response()->json($responseProducts);
+  }
+
+  private function mergeObjectItens($listContacts, $phones, $emails,  $adresses)
+  {
+    $listContacts->phones = $phones;
+    $listContacts->emails = $emails;
+    $listContacts->adresses = $adresses;
+
+    return $listContacts;
   }
 }
