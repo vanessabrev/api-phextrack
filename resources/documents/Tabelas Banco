@@ -59,12 +59,12 @@
         ->products
         ->product_items
 
-      /contacts
+      /contacts <|ok|>
         ->contacts
         ->phones
         ->adresses
 
-      /about-us
+      /about-us <|ok|>
         ->abouts
         ->about_galleries
         ->about_items
