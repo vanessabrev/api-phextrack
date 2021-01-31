@@ -17,8 +17,8 @@
 
 **CRIAR TABELA**
 
-      phones
-      adresses
+      phones <|ok|>
+      adresses <|ok|>
       theme-colors
       info-main
 
@@ -69,10 +69,10 @@
         ->about_galleries
         ->about_items
 
-      /info-main
+      /info-main <|ok|>
         ->menus
         ->info-main
-        ->theme-colors
+        ->theme-colors TODO: falta criar
 
       #(REMOVER ENDPOINTS E CONTROLLER's)
         /menus

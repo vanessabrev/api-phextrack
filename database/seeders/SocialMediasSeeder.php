@@ -22,6 +22,8 @@ class SocialMediasSeeder extends Seeder
         'facebook' => 'https://www.facebook.com/',
         'linkedin' => 'https://www.linkedin.com/',
         'skype' => 'https://www.skype.com/',
+        'created_at' => $now,
+        'updated_at' => $now,
       ]
     ]);
   }
