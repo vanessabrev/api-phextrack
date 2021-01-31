@@ -23,12 +23,12 @@ class MenusTableSeeder extends Seeder
       [
         'name' => 'Sobre nós',
         'position' => 1,
-        'reference' => '#about',
+        'reference' => '#aboutUs',
       ],
       [
         'name' => 'Serviços',
         'position' => 2,
-        'reference' => '#services',
+        'reference' => '#products',
       ],
       [
         'name' => 'Porfólio',
@@ -38,7 +38,7 @@ class MenusTableSeeder extends Seeder
       [
         'name' => 'Contato',
         'position' => 4,
-        'reference' => '#contact',
+        'reference' => '#contacts',
       ],
     ]);
   }
