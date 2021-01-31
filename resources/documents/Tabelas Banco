@@ -6,6 +6,8 @@
       about_items
       contacts
       info_homes
+      info-mains
+      theme-colors
       menus
       products
       product_items
@@ -15,68 +17,33 @@
 ################################################################
 
 
-**CRIAR TABELA**
-
-      phones <|ok|>
-      adresses <|ok|>
-      theme-colors
-      info-main
-
-      #failed_jobs
-      #migrations
-      #password_resets
-
-
-################################################################
-
-
 **ENDPOINTS vs TABELAS**
 
       #Hoje 30/01
-      /user
-      /menus
+
+      /info-main
+        ->info-mains
+        ->menus
+        ->theme-colors
+
+      /social-medias
+        ->social-medias
+
       /products
         ->products
         ->product_items
-      /social-medias
+
       /contacts
-      /info-homes
-      /about-us
-      /about-gallery
-      /about-itens
-
-
-################################################################
-
-
-**REFATORAÇÃO**
-
-      /info-home <|ok|>
-
-      /social-medias <|ok|>
-
-      /products  <|ok|>
-        ->products
-        ->product_items
-
-      /contacts <|ok|>
         ->contacts
         ->phones
         ->adresses
 
-      /about-us <|ok|>
+      /info-home
+        ->info-home
+
+      /about-us
         ->abouts
-        ->about_galleries
-        ->about_items
+        ->about-galleries
+        ->about-items
 
-      /info-main <|ok|>
-        ->menus
-        ->info-main
-        ->theme-colors TODO: falta criar
 
-      #(REMOVER ENDPOINTS E CONTROLLER's)
-        /menus
-        /about-gallery
-        /about-itens
-
-        obs: remover controller e routes/api.php
