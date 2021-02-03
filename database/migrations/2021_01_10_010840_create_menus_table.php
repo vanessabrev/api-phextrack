@@ -18,6 +18,7 @@ class CreateMenusTable extends Migration
       $table->string('name');
       $table->integer('position');
       $table->string('reference');
+      $table->timestamps();
     });
   }
 

@@ -38,7 +38,7 @@ class InfoMainController extends Controller
         return response()->json(["message" => 'ID nao encontrado no banco de dados'], 500);
       }
     } catch (\Exception $e) {
-      return response()->json(["error" => '$e->getCode()']);
+      return response()->json(["error" => $e, "message" => 'Erro inesperado ao alterar informacoes']);
     }
   }
 }

@@ -26,6 +26,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('admin/info-home', 'Api\\Admin\\InfoMainController@index');
 Route::post('admin/info-home/{id}', 'Api\\Admin\\InfoMainController@update');
 
+Route::get('admin/menu', 'Api\\Admin\\MenuController@index');
+Route::post('admin/menu', 'Api\\Admin\\MenuController@store');
+Route::put('admin/menu/{id}', 'Api\\Admin\\MenuController@update');
+Route::delete('admin/menu/{id}', 'Api\\Admin\\MenuController@destroy');
+
+Route::get('admin/about-gallery', 'Api\\Admin\\AboutGalleryController@index');
+Route::post('admin/about-gallery', 'Api\\Admin\\AboutGalleryController@store');
+Route::put('admin/about-gallery/{id}', 'Api\\Admin\\AboutGalleryController@update');
+Route::delete('admin/about-gallery/{id}', 'Api\\Admin\\AboutGalleryController@destroy');
+
+Route::get('admin/about-item', 'Api\\Admin\\AboutItemController@index');
+Route::post('admin/about-item', 'Api\\Admin\\AboutItemController@store');
+Route::put('admin/about-item/{id}', 'Api\\Admin\\AboutItemController@update');
+Route::delete('admin/about-item/{id}', 'Api\\Admin\\AboutItemController@destroy');
 
 Route::group(['middleware' => 'apiJwt',], function ($router) { // somente para uso do admin
   // CONTROLE DE ACESSO

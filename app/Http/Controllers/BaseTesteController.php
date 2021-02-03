@@ -28,8 +28,9 @@ class BaseTesteController extends Controller
     // try {
     //   $teste = new TesteModel($request->all());
     //   $teste->save();
+      // return response()->json(["message" => 'Informacoes foram salvas'], 200);
     // } catch (\Exception $e) {
-    //   return response()->json(["error" => '$e->getCode()']);
+    //   return response()->json(["error" => $e]);
     // }
   }
 
@@ -64,7 +65,7 @@ class BaseTesteController extends Controller
     //     return response()->json(["message" => 'ID nao encontrado no banco de dados'], 500);
     //   }
     // } catch (\Exception $e) {
-    //   return response()->json(["error" => '$e->getCode()']);
+    //   return response()->json(["error" => $e]);
     // }
   }
 
@@ -85,7 +86,7 @@ class BaseTesteController extends Controller
     //     return response()->json(["message" => 'ID nao encontrado no banco de dados'], 500);
     //   }
     // } catch (\Exception $e) {
-    //   return response()->json(["error" => '$e->getCode()']);
+    //   return response()->json(["error" => $e]);
     // }
   }
 }
