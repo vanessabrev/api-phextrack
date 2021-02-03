@@ -27,7 +27,6 @@
 
     <?php
 
-    use Illuminate\Support\Facades\Artisan;
     use Illuminate\Support\Facades\Route;
 
     class NewEndpoint
@@ -44,10 +43,14 @@
 
     //  $tablesDivider = ['SITE', 'ADMIN']
     ?>
+
+    <h2>
+      <p> # Enpoints Site </p>
+    </h2>
+
     <table id="routes-table" class="table table-responsive">
       <thead>
         <tr>
-          <th>Domain</th>
           <th>Name</th>
           <th>Url</th>
           <th>Method</th>
@@ -59,13 +62,12 @@
       <tbody>
         <tr>
           <?php foreach ($routes as $route) {
-            // if ( strpos(json_encode($route->action['domain']), 'ADMIN') ) {
+            if (!strpos(json_encode($route->action['prefix']), 'admin')) {
 
               $searches = array('\\ \\', '"', '[', ']', '\\/');
               $replacements = array('', '', '', '', '/');
 
               echo '<tr>' .
-                '<th>' . str_replace($searches, $replacements, json_encode($route->action['domain'])) . '</th>' .
                 '<th>' . str_replace($searches, $replacements, json_encode($route->action['as'])) . '</th>' .
                 '<th>' . '/' . str_replace($searches, $replacements, json_encode($route->uri)) . '</th>' .
                 '<th>' . str_replace($searches, $replacements,  json_encode($route->methods)) . '</th>' .
@@ -73,16 +75,54 @@
                 '<th>' . str_replace($searches, $replacements,  json_encode($route->getActionMethod())) . '</th>' .
                 '<th>  <a href="' . str_replace($searches, $replacements,  json_encode($route->uri)) . '" class="btn btn-gradient" target="_blank"> Ver </a> </th>' .
                 '</tr>';
+            }
           } ?>
         </tr>
       </tbody>
     </table>
 
-    <!-- <footer class="mastfoot mt-auto">
-      <div class="inner">
-        <p>Developed by <a href="https://josielfaria.com/">Devjo Tecnologia</a>, 2021.
-      </div>
-    </footer> -->
+
+    <h2>
+      <p> # Enpoints Admin </p>
+    </h2>
+
+    <table id="routes-table" class="table table-responsive">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Url</th>
+          <th>Method</th>
+          <th>Middleware</th>
+          <th>Function for API</th>
+          <th>Response</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <?php foreach ($routes as $route) {
+            if (strpos(json_encode($route->action['prefix']), 'admin')) {
+
+              $searches = array('\\ \\', '"', '[', ']', '\\/', '.index', '.store', '.update', '.destroy');
+              $replacements = array('', '', '', '', '/', '', '', '', '');
+
+
+              echo '<tr>' .
+                '<th>' . str_replace($searches, $replacements, json_encode($route->action['as'])) . '</th>' .
+                '<th>' . '/' . str_replace($searches, $replacements, json_encode($route->uri)) . '</th>' .
+                '<th>' . str_replace($searches, $replacements,  json_encode($route->methods)) . '</th>' .
+                '<th>' . str_replace($searches, $replacements, json_encode($route->action['middleware'])) . '</th>' .
+                '<th>' . str_replace($searches, $replacements,  json_encode($route->getActionMethod())) . '</th>' .
+                '<th>  <a href="' . str_replace($searches, $replacements,  json_encode($route->uri)) . '" class="btn btn-gradient" target="_blank"> Ver </a> </th>' .
+                '</tr>';
+            }
+          } ?>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <p class="dev-by">Developed by <a href="https://josielfaria.com/">Devjo Tecnologia</a>, 2021.
+
   </div>
 
 
@@ -124,6 +164,15 @@
   .btn-gradient:hover {
     box-shadow: 0 0px 0px 0 rgba(0, 40, 120, 0);
     transform: scale(0.930);
+  }
+
+  .dev-by {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    font-size: 10px;
+    color: gray;
+    padding: 0.5rem;
   }
 </style>
 

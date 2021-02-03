@@ -22,19 +22,18 @@ use Illuminate\Support\Facades\Route;
 // Route::post('auth/login', 'Api\\AuthController@login')->domain('ADMIN')->name('login'); // somente para uso do admin
 
 // TODO: colocar no apiJwt
-// Route::group(['domain' => 'ADMIN'], function () {
-  Route::resource('admin/info-main', 'Api\\Admin\\InfoMainController', ['only' => ['index', 'update']]);
-  Route::resource('admin/info-home', 'Api\\Admin\\InfoMainController', ['only' => ['index', 'store', 'update', 'destroy']]);
-  Route::resource('admin/menu', 'Api\\Admin\\MenuController', ['only' => ['index', 'store', 'update', 'destroy']]);
-  Route::resource('admin/about-us', 'Api\\Admin\\AboutController', ['only' => ['index', 'store', 'update', 'destroy']]);
-  Route::resource('admin/about-gallery', 'Api\\Admin\\AboutGalleryController', ['only' => ['index', 'store', 'update', 'destroy']]);
-  Route::resource('admin/about-item', 'Api\\Admin\\AboutItemController', ['only' => ['index', 'store', 'update', 'destroy']]);
-  Route::resource('admin/contact-address', 'Api\\Admin\\AddressController', ['only' => ['index', 'store', 'update', 'destroy']]);
-  Route::resource('admin/contact-phone', 'Api\\Admin\\PhoneController', ['only' => ['index', 'store', 'update', 'destroy']]);
-  Route::resource('admin/contact-email', 'Api\\Admin\\EmailController', ['only' => ['index', 'store', 'update', 'destroy']]);
-  Route::resource('admin/social-media', 'Api\\Admin\\SocialMediaController', ['only' => ['index', 'update']]);
-  Route::resource('admin/products', 'Api\\Admin\\ProductController', ['only' => ['index', 'store', 'update', 'destroy']]);
-// });
+
+Route::resource('admin/info-main', 'Api\\Admin\\InfoMainController', ['only' => ['index', 'update']],  ['domain' => 'jasodijasoidjo4555']);
+Route::resource('admin/info-home', 'Api\\Admin\\InfoMainController', ['only' => ['index', 'store', 'update', 'destroy']]);
+Route::resource('admin/menu', 'Api\\Admin\\MenuController', ['only' => ['index', 'store', 'update', 'destroy']]);
+Route::resource('admin/about-us', 'Api\\Admin\\AboutController', ['only' => ['index', 'store', 'update', 'destroy']]);
+Route::resource('admin/about-gallery', 'Api\\Admin\\AboutGalleryController', ['only' => ['index', 'store', 'update', 'destroy']]);
+Route::resource('admin/about-item', 'Api\\Admin\\AboutItemController', ['only' => ['index', 'store', 'update', 'destroy']]);
+Route::resource('admin/contact-address', 'Api\\Admin\\AddressController', ['only' => ['index', 'store', 'update', 'destroy']]);
+Route::resource('admin/contact-phone', 'Api\\Admin\\PhoneController', ['only' => ['index', 'store', 'update', 'destroy']]);
+Route::resource('admin/contact-email', 'Api\\Admin\\EmailController', ['only' => ['index', 'store', 'update', 'destroy']]);
+Route::resource('admin/social-media', 'Api\\Admin\\SocialMediaController', ['only' => ['index', 'update']]);
+Route::resource('admin/products', 'Api\\Admin\\ProductController', ['only' => ['index', 'store', 'update', 'destroy']]);
 
 
 /*
@@ -56,11 +55,9 @@ Route::group(['middleware' => 'apiJwt',], function ($router) { // somente para u
 | Referente ao SITE
 |--------------------------------------------------------------------------
 */
-// Route::group(['domain' => 'SITE'], function () {
-  Route::get('products', 'Api\\Site\\ProductController@index')->name('products');
-  Route::get('social-medias', 'Api\\Site\\SocialMediaController@index')->name('social-medias');;
-  Route::get('contacts', 'Api\\Site\\ContactController@index')->name('contacts');;
-  Route::get('info-main', 'Api\\Site\\InfoMainController@index')->name('info-main');;
-  Route::get('info-home', 'Api\\Site\\InfoHomeController@index')->name('info-home');;
-  Route::get('about-us', 'Api\\Site\\AboutController@index')->name('about-us');;
-// });
+Route::get('products', 'Api\\Site\\ProductController@index')->name('products');
+Route::get('social-medias', 'Api\\Site\\SocialMediaController@index')->name('social-medias');
+Route::get('contacts', 'Api\\Site\\ContactController@index')->name('contacts');
+Route::get('info-main', 'Api\\Site\\InfoMainController@index')->name('info-main');
+Route::get('info-home', 'Api\\Site\\InfoHomeController@index')->name('info-home');
+Route::get('about-us', 'Api\\Site\\AboutController@index')->name('about-us');
