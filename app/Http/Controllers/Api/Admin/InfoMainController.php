@@ -35,7 +35,7 @@ class InfoMainController extends Controller
         $info->update($request->all());
         return response()->json(["message" => 'Informacoes foram atualizadas'], 200);
       } else {
-        return response()->json(["message" => 'ID não encontrado no banco de dados'], 500);
+        return response()->json(["message" => 'ID nao encontrado no banco de dados'], 500);
       }
     } catch (\Exception $e) {
       return response()->json(["error" => '$e->getCode()']);

@@ -61,7 +61,7 @@ class BaseTesteController extends Controller
     //     // If your body is JSON then you will probably need:
     //     // $teste->update($request->json()->all());
     //   } else {
-    //     return response()->json(["message" => 'ID não encontrado no banco de dados'], 500);
+    //     return response()->json(["message" => 'ID nao encontrado no banco de dados'], 500);
     //   }
     // } catch (\Exception $e) {
     //   return response()->json(["error" => '$e->getCode()']);
@@ -82,7 +82,7 @@ class BaseTesteController extends Controller
     //     $teste->delete();
     //     return response()->json(["message" => 'Informacoes foram deletadas'], 200);
     //   } else {
-    //     return response()->json(["message" => 'ID não encontrado no banco de dados'], 500);
+    //     return response()->json(["message" => 'ID nao encontrado no banco de dados'], 500);
     //   }
     // } catch (\Exception $e) {
     //   return response()->json(["error" => '$e->getCode()']);
