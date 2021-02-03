@@ -42,10 +42,13 @@
       }
     }
 
+    //  $tablesDivider = ['SITE', 'ADMIN']
     ?>
     <table id="routes-table" class="table table-responsive">
       <thead>
         <tr>
+          <th>Domain</th>
+          <th>Name</th>
           <th>Url</th>
           <th>Method</th>
           <th>Middleware</th>
@@ -56,13 +59,20 @@
       <tbody>
         <tr>
           <?php foreach ($routes as $route) {
-            echo '<tr>' .
-              '<th>' . '/' . str_replace('"', '', json_encode($route->uri)) . '</th>' .
-              '<th>' .  str_replace('"', '',  str_replace('[', '',  str_replace(']', '', json_encode($route->methods)))) . '</th>' .
-              '<th>' . str_replace('"', '', str_replace('[', '',  str_replace(']', '', json_encode($route->action['middleware'])))) . '</th>' .
-              '<th>' . str_replace('"', '', json_encode($route->getActionMethod())) . '</th>' .
-              '<th>  <a href="' . str_replace('"', '', json_encode($route->uri)) . '" class="btn btn-gradient" target="_blank"> Ver </a> </th>' .
-              '</tr>';
+            // if ( strpos(json_encode($route->action['domain']), 'ADMIN') ) {
+
+              $searches = array('\\ \\', '"', '[', ']', '\\/');
+              $replacements = array('', '', '', '', '/');
+
+              echo '<tr>' .
+                '<th>' . str_replace($searches, $replacements, json_encode($route->action['domain'])) . '</th>' .
+                '<th>' . str_replace($searches, $replacements, json_encode($route->action['as'])) . '</th>' .
+                '<th>' . '/' . str_replace($searches, $replacements, json_encode($route->uri)) . '</th>' .
+                '<th>' . str_replace($searches, $replacements,  json_encode($route->methods)) . '</th>' .
+                '<th>' . str_replace($searches, $replacements, json_encode($route->action['middleware'])) . '</th>' .
+                '<th>' . str_replace($searches, $replacements,  json_encode($route->getActionMethod())) . '</th>' .
+                '<th>  <a href="' . str_replace($searches, $replacements,  json_encode($route->uri)) . '" class="btn btn-gradient" target="_blank"> Ver </a> </th>' .
+                '</tr>';
           } ?>
         </tr>
       </tbody>
