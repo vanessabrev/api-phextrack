@@ -15,3 +15,7 @@ class UserController extends Controller
     return response()->json($users);
   }
 }
+
+// if(empty($request->password)){
+// $user->password = Hash::make($request->password);
+// }
