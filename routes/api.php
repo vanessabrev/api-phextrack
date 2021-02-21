@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 // TODO: colocar no apiJwt
 
 Route::resource('admin/info-main', 'Api\\Admin\\InfoMainController', ['only' => ['index', 'update']],  ['domain' => 'jasodijasoidjo4555']);
-Route::resource('admin/info-home', 'Api\\Admin\\InfoMainController', ['only' => ['index', 'store', 'update', 'destroy']]);
+Route::resource('admin/info-home', 'Api\\Admin\\InfoHomeController', ['only' => ['index', 'store', 'update', 'destroy']]);
 Route::resource('admin/menu', 'Api\\Admin\\MenuController', ['only' => ['index', 'store', 'update', 'destroy']]);
 Route::resource('admin/about-us', 'Api\\Admin\\AboutController', ['only' => ['index', 'store', 'update', 'destroy']]);
 Route::resource('admin/about-gallery', 'Api\\Admin\\AboutGalleryController', ['only' => ['index', 'store', 'update', 'destroy']]);
