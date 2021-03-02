@@ -34,6 +34,7 @@ Route::resource('admin/contact-phone', 'Api\\Admin\\PhoneController', ['only' =>
 Route::resource('admin/contact-email', 'Api\\Admin\\EmailController', ['only' => ['index', 'store', 'update', 'destroy']]);
 Route::resource('admin/social-media', 'Api\\Admin\\SocialMediaController', ['only' => ['index', 'update']]);
 Route::resource('admin/products', 'Api\\Admin\\ProductController', ['only' => ['index', 'store', 'update', 'destroy']]);
+Route::resource('admin/upload-images', 'Api\\Admin\\UploadImagesController', ['only' => ['index', 'store']]);
 
 
 /*
