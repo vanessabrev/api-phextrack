@@ -10,7 +10,7 @@ class Phone extends Model
   use HasFactory;
 
   protected $fillable = [
-    'id', 'phones'
+    'id', 'phone'
   ];
 
   static function rules()

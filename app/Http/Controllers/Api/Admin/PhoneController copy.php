@@ -28,8 +28,8 @@ class PhoneController extends Controller
   public function store(Request $request)
   {
     try {
-      $phones = new Phone($request->all());
-      $phones->save();
+      $phone = new Phone($request->all());
+      $phone->save();
       return response()->json(["message" => 'Informacoes foram salvas'], 200);
     } catch (\Exception $e) {
       return response()->json(["error" => $e, "message" => 'Erro inesperado ao salvar informacoes']);
