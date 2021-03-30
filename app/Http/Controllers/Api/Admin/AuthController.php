@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\Api\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -31,6 +31,17 @@ class AuthController extends Controller
 
     return $this->respondWithToken($token);
   }
+
+  /**
+   * Get the authenticated User.
+   *
+   * @return \Illuminate\Http\JsonResponse
+   */
+  public function logged()
+  {
+    return response()->json(auth()->user());
+  }
+
   /**
    * Log the user out (Invalidate the token).
    *

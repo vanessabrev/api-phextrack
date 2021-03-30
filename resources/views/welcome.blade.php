@@ -136,7 +136,6 @@
   }
 
   .container {
-    height: 100vh;
     display: grid;
   }
 

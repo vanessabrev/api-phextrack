@@ -1,0 +1,8 @@
+0000000000000000000000000000000000000000 226945c26ca6b5c5b20de589e3702b37cac53460 Josiel Faria <josielsifa@gmail.com> 1613504739 -0300	branch: Created from refs/remotes/origin/develop-josiel
+226945c26ca6b5c5b20de589e3702b37cac53460 62294a9dc1f5500ecd1643f6e4b9cae741bd87e0 Josiel Faria <josielsifa@gmail.com> 1613947224 -0300	commit: Ajuste na rota do info home
+62294a9dc1f5500ecd1643f6e4b9cae741bd87e0 6a8633a64d10fcaef9cf189b8d81ff560c39a2e3 Josiel Faria <josielsifa@gmail.com> 1614694733 -0300	merge master: Fast-forward
+6a8633a64d10fcaef9cf189b8d81ff560c39a2e3 d64a2455137d2ec73bb521f5fa1c56fbc817d3f2 Josiel Faria <josielsifa@gmail.com> 1614694870 -0300	commit: Add file para solucoes dev
+d64a2455137d2ec73bb521f5fa1c56fbc817d3f2 14e2926145b8862203b88ee080e2ff899559600f Josiel Faria <josielsifa@gmail.com> 1614694885 -0300	commit: New lock
+14e2926145b8862203b88ee080e2ff899559600f a0797e4fd6869dc01f87db219caccf7191dd0f78 Josiel Faria <josielsifa@gmail.com> 1614712651 -0300	commit: Arquivo repetido
+a0797e4fd6869dc01f87db219caccf7191dd0f78 925ee2eda4fd8e324715272509cb0cdf64396c70 Josiel Faria <josielsifa@gmail.com> 1614712673 -0300	commit: Adicionando caminho para salvar imagens
+925ee2eda4fd8e324715272509cb0cdf64396c70 c3fdf23c2915d0476f013b1e83a762d4fb27f30d Josiel Faria <josielsifa@gmail.com> 1614712735 -0300	commit: Adicionando enpoint para salvar imagens e retornar o path dela

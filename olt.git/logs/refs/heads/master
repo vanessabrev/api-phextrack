@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 226945c26ca6b5c5b20de589e3702b37cac53460 Josiel Faria <josielsifa@gmail.com> 1613504023 -0300	clone: from github.com:vanessabrev/api-phextrack.git
+226945c26ca6b5c5b20de589e3702b37cac53460 62294a9dc1f5500ecd1643f6e4b9cae741bd87e0 Josiel Faria <josielsifa@gmail.com> 1613947280 -0300	merge origin/develop-josiel: Fast-forward
+62294a9dc1f5500ecd1643f6e4b9cae741bd87e0 6a8633a64d10fcaef9cf189b8d81ff560c39a2e3 Josiel Faria <josielsifa@gmail.com> 1613959934 -0300	commit: Ajuste endpoint para novo admin
+6a8633a64d10fcaef9cf189b8d81ff560c39a2e3 c3fdf23c2915d0476f013b1e83a762d4fb27f30d Josiel Faria <josielsifa@gmail.com> 1614795722 -0300	merge develop-josiel: Fast-forward
+c3fdf23c2915d0476f013b1e83a762d4fb27f30d 3bd31185ff4f2c7fadda2061749ffd14044be229 Josiel Faria <josielsifa@gmail.com> 1614812187 -0300	commit: Ajustes crud phone api admin
+3bd31185ff4f2c7fadda2061749ffd14044be229 1ddc21dc907cf4531b1e98b07ee6689eef699f6f Josiel Faria <josielsifa@gmail.com> 1617052069 -0300	commit: Generate keys para jwt
+1ddc21dc907cf4531b1e98b07ee6689eef699f6f 036b8b2b602ff396cff6203e3e651bbbf8e406ed Josiel Faria <josielsifa@gmail.com> 1617052103 -0300	commit: Configurando seguraçando jwt para token
