@@ -27,7 +27,7 @@ Route::post('admin/auth/login', 'Api\\Admin\\AuthController@login')->name('login
 |--------------------------------------------------------------------------
 */
 Route::group(['middleware' => 'apiJwt',], function ($router) { // somente para uso do admin
-
+  Route::resource('admin/users', 'Api\\Admin\\UserController', ['only' => ['index', 'store', 'update', 'destroy']]);
   Route::resource('admin/info-main', 'Api\\Admin\\InfoMainController', ['only' => ['index', 'update']]);
   Route::resource('admin/info-home', 'Api\\Admin\\InfoHomeController', ['only' => ['index', 'store', 'update', 'destroy']]);
   Route::resource('admin/menu', 'Api\\Admin\\MenuController', ['only' => ['index', 'store', 'update', 'destroy']]);
